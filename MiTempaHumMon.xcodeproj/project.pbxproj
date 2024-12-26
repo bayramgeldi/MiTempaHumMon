@@ -29,9 +29,22 @@
 		1B3469B72D1D9FE60054FEF5 /* MiTempaHumMonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiTempaHumMonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1B3469D92D1E04B80054FEF5 /* Exceptions for "MiTempaHumMon" folder in "MiTempaHumMon" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 1B34699B2D1D9FE40054FEF5 /* MiTempaHumMon */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1B34699E2D1D9FE40054FEF5 /* MiTempaHumMon */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				1B3469D92D1E04B80054FEF5 /* Exceptions for "MiTempaHumMon" folder in "MiTempaHumMon" target */,
+			);
 			path = MiTempaHumMon;
 			sourceTree = "<group>";
 		};
@@ -403,6 +416,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MiTempaHumMon/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "App requires Bluetooth access to connect to devices.";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "App requires Bluetooth to interact with peripherals.";
@@ -437,6 +451,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MiTempaHumMon/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "App requires Bluetooth access to connect to devices.";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "App requires Bluetooth to interact with peripherals.";

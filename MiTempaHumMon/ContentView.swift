@@ -1,44 +1,40 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var bluetoothManager: CoreBluetoothManager
-    private var menuBarController: MenuBarController
-
-    init(menuBarController: MenuBarController) {
-        _bluetoothManager = StateObject(wrappedValue: CoreBluetoothManager(menuBarController: menuBarController))
-        self.menuBarController = menuBarController
-    }
+    @ObservedObject private var bluetoothManager = CoreBluetoothManager.shared
 
     var body: some View {
-        VStack {
-            Text("Bluetooth Devices")
-                .font(.headline)
-                .padding()
-
-            if bluetoothManager.centralState != .poweredOn {
-                Text("Please turn on Bluetooth")
-                    .foregroundColor(.red)
-            } else {
-                List(bluetoothManager.discoveredDevices, id: \.identifier) { device in
-                    HStack {
-                        Text(device.name ?? "Unknown Device")
-                        Spacer()
-                        Button("Connect") {
-                            bluetoothManager.connectToDevice(device)
+        if bluetoothManager.isConnected {
+            TemperatureHumidityView()
+        }else{
+            VStack {
+                Text("Bluetooth Devices")
+                    .font(.headline)
+                    .padding()
+                if bluetoothManager.centralState != .poweredOn {
+                    Text("Please turn on Bluetooth")
+                        .foregroundColor(.red)
+                }
+                else if bluetoothManager.discoveredDevicesCount==0 {
+                    Text("No devices found")
+                        .foregroundColor(.gray)
+                } else {
+                    Text("Discovered Devices:")
+                    Text(String(bluetoothManager.discoveredDevicesCount))
+                    List(bluetoothManager.discoveredDevices, id: \.identifier) { device in
+                        HStack {
+                            Text(device.name ?? "Unknown Device")
+                            Spacer()
+                            Button("Connect") {
+                                bluetoothManager.connectToDevice(device)
+                            }
                         }
                     }
                 }
             }
-
-            Spacer()
-
-            if bluetoothManager.isConnected {
-                Text("Temperature: \(bluetoothManager.temperature)")
-                Text("Humidity: \(bluetoothManager.humidity)")
+            .onAppear {
+                bluetoothManager.startScanning()
             }
-        }
-        .onAppear {
-            bluetoothManager.startScanning()
         }
     }
 }
