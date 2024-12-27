@@ -11,6 +11,10 @@ struct ContentView: View {
                 Text("Bluetooth Devices")
                     .font(.headline)
                     .padding()
+                Text("currently only compatible with Mi Temperature and Humidity Monitor 2 (LYWSD03MMC)")
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+                    .padding(.bottom, 10)
                 if bluetoothManager.centralState != .poweredOn {
                     Text("Please turn on Bluetooth")
                         .foregroundColor(.red)

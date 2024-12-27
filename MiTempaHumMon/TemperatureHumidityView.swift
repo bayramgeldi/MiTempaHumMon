@@ -49,15 +49,12 @@ struct TemperatureHumidityView: View {
             }
 
             Spacer()
-
-            Button("Disconnect") {
-                bluetoothManager.disconnectAllDevices()
-            }
-            .foregroundColor(.white)
-            .padding()
-            .frame(width: 200)
-            .background(Color.red)
-            .cornerRadius(10)
+            
+            // Footer Section
+            Text("@bayramgeldi")
+                .font(.footnote)
+                .foregroundColor(.gray)
+                .padding(.bottom, 10)
         }
         .padding()
     }

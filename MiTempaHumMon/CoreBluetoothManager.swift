@@ -148,7 +148,7 @@ class CoreBluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate
     }
     
     func disconnectAllDevices() {
-        print("Disconnecting all devices")
+        print("Disconnecting all devices...")
         discoveredDevices.forEach { peripheral in
             print("Disconnecting \(peripheral.name ?? "")")
             centralManager?.cancelPeripheralConnection(peripheral)
