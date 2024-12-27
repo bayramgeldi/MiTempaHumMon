@@ -31,6 +31,8 @@ struct ContentView: View {
                         HStack {
                             Text(device.name ?? "Unknown Device")
                             Spacer()
+                            Text(device.identifier.uuidString.suffix(4))
+                            Spacer()
                             Button("Connect") {
                                 bluetoothManager.connectToDevice(device)
                                 addToRecentSensors(device) // Add device to recent sensors
@@ -49,6 +51,8 @@ struct ContentView: View {
                     List(Array(recentSensors.enumerated()), id: \.1.id) { index, sensor in
                         HStack {
                             Text(sensor.name ?? "Unknown Device")
+                            Spacer()
+                            Text(sensor.id.uuidString.suffix(4))
                             Spacer()
                             Button("Reconnect") {
                                 bluetoothManager.connectToDeviceByIdentifier(sensor.id)
