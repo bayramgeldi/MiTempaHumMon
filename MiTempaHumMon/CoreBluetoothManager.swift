@@ -88,6 +88,14 @@ class CoreBluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate
         centralManager.connect(peripheral, options: nil)
     }
     
+    func connectToDeviceByIdentifier(_ id: UUID) {
+        if let device = discoveredDevices.first(where: { $0.identifier == id }) {
+            connectToDevice(device)
+        } else {
+            print("Device with UUID \(id) not found.")
+        }
+    }
+    
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         peripheral.delegate = self
         peripheral.discoverServices(nil)
