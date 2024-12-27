@@ -1,20 +1,13 @@
-# SHAMI Temperature and Humidity Monitor
+# Temperature and Humidity Monitor
 
-This application monitors temperature and humidity levels.
+This application monitors temperature and humidity levels. Currently supports only Temperature and Humidity Monitor 2 (LYWSD03MMC)
 
 ## Features
-- Real-time temperature and humidity readings.
-- Historical data tracking.
-- User-friendly interface.
-
-## Installation
-1. Clone the repository.
-   \`\`\`bash
-   git clone <repository-url>
-   \`\`\`
+-[x] Real-time temperature and humidity readings.
+-[ ] Historical data tracking.
 
 ## Usage
-- Detailed instructions on how to use the application.
+- As an end user you can download from releases
 
 ## Contributing
 1. Fork the repository.
