@@ -3,8 +3,11 @@
 This application monitors temperature and humidity levels. Currently supports only Temperature and Humidity Monitor 2 (LYWSD03MMC)
 
 ## Features
--[x] Real-time temperature and humidity readings.
--[ ] Historical data tracking.
+✅ Real-time temperature and humidity readings.
+
+⏳Historical data tracking.
+
+⏳Show data on menu bar
 
 ## Usage
 - As an end user you can download from releases
